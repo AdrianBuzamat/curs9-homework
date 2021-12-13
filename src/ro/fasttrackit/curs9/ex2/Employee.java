@@ -6,7 +6,7 @@ public class Employee implements Person {
     private String firstName;
     private String lastName;
     private String adress;
-    private LocalDateTime birthday;
+    protected LocalDateTime birthday;
     private String position;
     private LocalDateTime dayOfEmployment;
 
@@ -14,45 +14,60 @@ public class Employee implements Person {
 
     }
 
-    public Employee(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
+    public Employee(String firstName, String lastName, String adress, LocalDateTime birthday) {
+            this(firstName, lastName, adress, birthday, "undefined", LocalDateTime.now());
+        }
 
-    @Override
-    public String getFirstName() {
-        return firstName + " ";
-    }
+    public Employee(String firstName, String lastName, String adress, LocalDateTime birthday, String position) {
+            this(firstName, lastName, adress, birthday, position, LocalDateTime.now());
+        }
 
-    @Override
-    public String getLastName() {
-        return lastName;
-    }
+    public
+        Employee(String firstName, String lastName, String adress, LocalDateTime birthday, String position, LocalDateTime dayOfEmployment)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.adress = adress;
+            this.birthday = birthday;
+            this.position = position;
+            this.dayOfEmployment = dayOfEmployment;
 
-    @Override
-    public String getAdress() {
-        return adress;
-    }
+        }
 
-    @Override
-    public LocalDateTime getBirthday() {
-        return birthday;
-    }
+        @Override
+        public String getFirstName () {
+            return firstName + " ";
+        }
 
-    public LocalDateTime dateOfEmployment() {
-        return dayOfEmployment;
-    }
+        @Override
+        public String getLastName () {
+            return lastName;
+        }
 
-    public String getPosition() {
-        return position;
-    }
+        @Override
+        public String getAdress () {
+            return adress;
+        }
 
-    public void setBirthday(int year, int month, int day, int hour, int minute) {
+        @Override
+        public LocalDateTime getBirthday () {
+            return birthday;
+        }
 
-        this.birthday = LocalDateTime.of(year, month, day, hour, minute);
-    }
+        public LocalDateTime dateOfEmployment () {
+            return dayOfEmployment;
+        }
 
-    public void setDateOfEmployment(int year, int month, int day, int hour, int minute) {
-        this.dayOfEmployment = LocalDateTime.of(year, month, day, hour, minute);
+        public String getPosition () {
+            return position;
+        }
+
+        public void setBirthday ( int year, int month, int day, int hour, int minute){
+
+            this.birthday = LocalDateTime.of(year, month, day, hour, minute);
+        }
+
+        public void setDateOfEmployment ( int year, int month, int day, int hour, int minute){
+            this.dayOfEmployment = LocalDateTime.of(year, month, day, hour, minute);
+        }
     }
-}

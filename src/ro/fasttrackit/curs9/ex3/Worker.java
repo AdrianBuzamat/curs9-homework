@@ -8,18 +8,17 @@ import java.time.temporal.ChronoUnit;
 public class Worker extends Employee {
 
     public Worker(String firstName, String lastName) {
-        super(firstName, lastName);
+        super();
     }
 
     public String getFullName() {
         return getFirstName() + getLastName();
     }
 
-    public void getAge() {
+    public long getAge() {
         long years = ChronoUnit.YEARS.between(birthday, LocalDateTime.now());
-        long months = ChronoUnit.MONTHS.between(birthday, LocalDateTime.now());
 
-        System.out.println("years: " + years + " months: " + months % 12);
+      return years;
 
 
     }

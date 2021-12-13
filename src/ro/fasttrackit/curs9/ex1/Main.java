@@ -14,9 +14,9 @@ public class Main {
 
         System.out.println("----------------------------------------");
 
-        Fridge refrigerator = new Fridge();
+        Fridge refrigerator = new Fridge("Arctic", 7);
         refrigerator.setName("Arctic");
-        refrigerator.setTemperature(6);
+        refrigerator.toString();
         refrigerator.setType("refrigerator");
         refrigerator.setPrice(999.99);
         refrigerator.setDescription("Refrigerator for fruits");

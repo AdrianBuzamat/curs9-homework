@@ -1,8 +1,19 @@
 package ro.fasttrackit.curs9.ex1;
 
-public class Cosmetics extends Product{
+public class Cosmetics extends Product {
     private String color;
     private double weight;
+
+    public Cosmetics() {
+        this("undefined",0);
+    }
+    public Cosmetics(String color) {
+        this(color,0);
+    }
+    public Cosmetics(String color, double weight) {
+        this.color = color;
+        this.weight = weight;
+    }
 
 
     public void setColor(String color) {
@@ -23,7 +34,7 @@ public class Cosmetics extends Product{
 
     @Override
     public String toString() {
-        return  "Category: Cosmetics: " +
+        return "Category: Cosmetics: " +
                 super.toString() +
                 "color= '" + color + '\'' +
                 ", weight= " + weight +

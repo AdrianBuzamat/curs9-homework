@@ -6,6 +6,28 @@ public class Product {
     private String description;
     private int quantity;
 
+    public Product() {
+
+    }
+    public Product(double price) {
+        this(price, "undefined", "undefined", 0);
+    }
+
+    public Product(double price, String name) {
+        this(price,name, "undefined", 0);
+    }
+
+    public Product(double price, String name, String description) {
+        this(price,name,description,0);
+    }
+
+    public Product(double price, String name, String description, int quantity) {
+        this.price = price;
+        this.name = name;
+        this.description = description;
+        this.quantity = quantity;
+    }
+
 
     public void setPrice(double price) {
         this.price = price;
@@ -19,7 +41,7 @@ public class Product {
         this.name = name;
     }
 
-    public String getName() {
+    public String getBrand() {
         return name;
     }
 
@@ -41,7 +63,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "name= '" + name + '\'' + ", "+
+        return "name= '" + name + '\'' + ", " +
                 "price= " + price +
                 ", description= '" + description + '\'' +
                 ", quantity= " + quantity +
